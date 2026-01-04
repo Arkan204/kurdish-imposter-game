@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ئیمپۆستەر - کورد</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Setup Screen -->
+  <div id="setup-screen" class="screen active">
+    <h1>ئیمپۆستەر - کورد</h1>
+
+    <div class="input-group">
+      <label>ژمارەی یاریزان (3-12)</label>
+      <input type="number" id="player-count" min="3" max="12" value="4">
+    </div>
+
+    <div class="input-group">
+      <label>ژمارەی ئیمپۆستەر</label>
+      <input type="number" id="imposter-count" min="1" max="3" value="1">
+    </div>
+
+    <div class="input-group">
+      <label>جۆر (Category)</label>
+      <select id="category-select">
+        <!-- Options populated by JS -->
+      </select>
+    </div>
+
+    <button class="btn" onclick="startGame()">دەستپێکردن</button>
+  </div>
+
+  <!-- Game Loop Screen -->
+  <div id="game-screen" class="screen">
+    <h2 id="player-indicator">یاریزان 1</h2>
+
+    <div class="card" id="role-card" onclick="revealRole()">
+      <div id="card-front">
+        <p style="font-size: 4rem; opacity: 0.5;">?</p>
+        <p class="tap-hint">کلیک بکە بۆ بینینی ڕۆڵەکەت</p>
+      </div>
+      <div id="card-back" style="display: none;">
+        <p id="role-content" class="role-text"></p>
+      </div>
+    </div>
+
+    <button id="action-btn" class="btn btn-reveal" onclick="revealRole()">ڕۆڵەکەت ببینە</button>
+    <button id="hide-btn" class="btn btn-hide hidden" onclick="hideRole()">ڕۆڵەکەت بشارەوە</button>
+  </div>
+
+  <!-- Result / Discussion Screen -->
+  <div id="result-screen" class="screen">
+    <h1>دەستی پێکرد!</h1>
+    <p style="font-size: 1.2rem; margin-bottom: 20px;">درۆزنەکە بدۆزنەوە!</p>
+
+    <div class="timer-display" id="timer">00:00</div>
+
+    <div style="display: flex; gap: 10px; width: 100%;">
+      <button class="btn" style="background: #333;" onclick="toggleTimer()">کات</button>
+      <button class="btn" onclick="resetGame()">یارییەکی تر</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

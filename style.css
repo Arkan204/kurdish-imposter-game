@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap');
+
+:root {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --primary-neon: #b026ff;
+  --secondary-neon: #00d4ff;
+  --text-color: #ededed;
+  --danger-color: #ff3860;
+  --success-color: #23d160;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Container for screens */
+.screen {
+  display: none;
+  /* Hidden by default */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.screen.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px var(--primary-neon), 0 0 20px var(--primary-neon);
+  color: var(--primary-neon);
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--secondary-neon);
+}
+
+/* Inputs and Selects */
+.input-group {
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: right;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: #aaa;
+}
+
+select,
+input[type="number"] {
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid #333;
+  background-color: var(--card-bg);
+  color: white;
+  font-size: 1.2rem;
+  outline: none;
+  transition: all 0.3s;
+}
+
+select:focus,
+input:focus {
+  border-color: var(--secondary-neon);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+/* Buttons */
+.btn {
+  background: linear-gradient(135deg, var(--primary-neon), #8a1cc4);
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(176, 38, 255, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 8px rgba(176, 38, 255, 0.4);
+}
+
+.btn-hide {
+  background: #333;
+  box-shadow: none;
+  color: #ccc;
+}
+
+.btn-reveal {
+  background: linear-gradient(135deg, var(--secondary-neon), #0099cc);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+}
+
+/* Card / Role Display */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  padding: 40px 20px;
+  width: 100%;
+  margin-bottom: 30px;
+  border: 1px solid #333;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.role-text {
+  font-size: 2rem;
+  font-weight: bold;
+  display: none;
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.role-text.visible {
+  display: block;
+}
+
+.imposter-text {
+  color: var(--danger-color);
+  text-shadow: 0 0 10px rgba(255, 56, 96, 0.5);
+}
+
+.player-text {
+  color: var(--success-color);
+}
+
+.tap-hint {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Timer */
+.timer-display {
+  font-size: 3rem;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 20px 0;
+  color: var(--text-color);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Utilities */
+.neon-border {
+  border: 2px solid var(--primary-neon);
+  box-shadow: 0 0 15px var(--primary-neon);
+}
