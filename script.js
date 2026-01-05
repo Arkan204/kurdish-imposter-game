@@ -59,12 +59,12 @@ const categories = {
       "بەور", "ماسی", "مانگا", "مەڕ", "بزن", "کەر", "توتی", "کۆتر", "مریشک", "کەڵەشێر",
       "قەل", "نەعامە", "حوشتر", "زەڕافە", "کەر کێوی", "ڕێوی", "چەقەڵ", "کەمتیار", "دۆڵفین", "نەهەنگ",
       "قرژاڵ", "باڵندە", "پەپولە", "مێش", "مێشوولە", "سیسرک", "جاڵجاڵۆکە", "مارمێلکە", "تەیمانە", "کیسەڵ",
-      "بۆق", "سمۆرە", "ژیشک", "بەراز", "ورچ", "پاندە", "کەنگەرو", "کوالا", "شەمشەمەکوێرە", "داڵ",
-      "قاز", "مراوی", "قو", "پەڕەسێلکە", "توکە", "کوندەپەپوو", "پەنگوین", "فۆک", "نەهەنگی شین",
-      "ئەختەبوت", "ناوێرە", "گوێچکە ماسی", "ئەسپۆن", "ماسی سور", "سەلەمون", "تونا", "سەردین", "قۆڕخ", "باز",
-      "شاهێن", "پۆڕ", "کەو", "سوێسکە", "حەوتسەر", "بزنی کێوی", "خەزال", "مامز", "بەرازی کێوی", "ئاژەڵی ئاوی",
-      "مشک", "جرج", "هەمستەر", "خوێمژ", "کرم", "هەنگ", "زیڕە", "قۆڕ", "کرما دەریایی", "ئەسپێ",
-      "سەگی ئاوی", "مەیمونی بچوک", "گۆرێلا", "شمپانزی", "ئۆرانگوتان", "مێرولە", "کوللە", "تەرزە", "قاڵۆنچە", "پشیلەی کێوی"
+      "بۆق", "سمۆرە", "ژیشک", "بەراز", "ورچ", "پاندا", "کەنگەر", "کوالا", "شەمشەمەکوێرە", "داڵ",
+      "قاز", "مراوی", "پەڕەسێلکە", "کوندەپەپوو", "پەنگوین", "نەهەنگی شین",
+      "ئەختەبوت", "گوێچکە ماسی", "سەلەمون", "ماسی تونا", "باز",
+      "شاهێن", "پۆڕ", "کەو", "سوێسکە", "بزنی کێوی", "خەزال", "مامز", "بەرازی کێوی",
+      "مشک", "جرج", "هامستەر", "کرم", "هەنگ", "زیڕە", "قۆڕ", "کرما دەریایی", "ئەسپێ",
+      "سەگی ئاوی", "مەیمونی بچوک", "گۆرێلا", "شمپانزی", "مێرولە", "کوللە", "تەرزە", "قاڵۆنچە", "پشیلەی کێوی"
     ]
   },
   "cities": {
@@ -78,7 +78,7 @@ const categories = {
       "بنەسڵاوە", "دارەتوو", "بەحرکە", "مەسیف", "هەریر", "خەبات", "عەنکاوە", "قوشتەپە", "مخمور", "گوێڕ",
       "شنگال", "تەلعەفەر", "حەویجە", "داقوق", "لیلان", "یایچی", "بەریزان", "ئاغجەلەر", "سەنگاو", "باوەنور",
       "ڕزگاری", "سمود", "شێخ باوە", "جەلەولا", "سەعدییە", "قەرەتەپە", "جەبارە", "کۆکس", "باتایە", "سەرسەنگ",
-      "دێرەلوک", "قەدش", "بامرنی", "کانی ماسێ", "بێگۆڤا", "دەرکار", "باتێفا", "دۆمیس", "فایدی", "کەلەک"
+      "دێرەلوک", "قەدش", "بامرنی", "کانی ماسی", "بێگۆڤا", "دەرکار", "باتێفا", "دۆمیس", "فایدی", "کەلەک"
     ]
   },
   "food": {
@@ -86,7 +86,7 @@ const categories = {
     items: [
       "یاپراخ", "کەباب", "برنج", "کوبە", "مەستاو", "فاسۆلیا", "نیسک", "تەشریب", "دۆڵمە", "سەرپێ",
       "قەلیاوە", "کوتڵک", "شفتە", "شلە", "بامیە", "شڵەمین", "دانولە", "کەشکە", "دۆینە", "تۆراخ",
-      "کنگر", "کارگ", "ڕێواس", "شۆربا", "مریشکی برژاو", "ماسی مەسگوف", "قاز و قورینگ", "باڵەفڕە (باڵی مریشک)", "جگەر", "دڵ و قورگ",
+      "کنگر", "کارگ", "شۆربا", "مریشکی برژاو", "قاز و قورینگ", "باڵەفڕە (باڵی مریشک)", "جگەر", "دڵ",
       "سەروپێ", "پاقلە", "شێلم", "نۆکاو", "ساوەر", "مەقلوبە", "بریانی", "قۆزی", "خۆورش",
       "شاورمە", "فەلافل", "پیتزا", "بەرگەر", "کێنتاکی", "ساندویچ", "مەعکەرۆنی", "سپاگێتی", "لازانیا", "ستێک",
       "سۆسج", "پەنیری کوردی", "ماست", "کەرە", "ڕۆنی کوردی", "هەنگوین", "دۆشاو", "ڕاشی", "تەحین", "نانی تیری",
@@ -99,18 +99,18 @@ const categories = {
   "wwe": {
     name: "موسارەعە",
     items: [
-      "John Cena", "The Rock", "Roman Reigns", "Undertaker", "Stone Cold Steve Austin",
-      "Triple H", "Randy Orton", "Brock Lesnar", "Cody Rhodes", "Seth Rollins",
-      "CM Punk", "Rey Mysterio", "Hulk Hogan", "Shawn Michaels", "Edge",
-      "Batista", "Kane", "Big Show", "Chris Jericho", "Kurt Angle",
-      "Ric Flair", "Bret Hart", "Macho Man Randy Savage", "Andre the Giant",
-      "Ultimate Warrior", "Goldberg", "Sting", "AJ Styles", "Daniel Bryan",
-      "Drew McIntyre", "Becky Lynch", "Charlotte Flair", "Ronda Rousey", "Bianca Belair",
-      "Rhea Ripley", "Sasha Banks", "Bayley", "Asuka", "Trish Stratus", "Lita",
-      "The Miz", "Sheamus", "Jeff Hardy", "Matt Hardy", "Rob Van Dam",
-      "Booker T", "Eddie Guerrero", "JBL", "Mick Foley", "Diesel (Kevin Nash)",
-      "Logan Paul", "LA Knight", "Finn Balor", "Gunther", "Jey Uso", "Jimmy Uso", "Solo Sikoa",
-      "Bray Wyatt", "Braun Strowman", "Bobby Lashley"
+      { name: "John Cena", hint: "Male" }, { name: "The Rock", hint: "Male" }, { name: "Roman Reigns", hint: "Male" }, { name: "Undertaker", hint: "Male" }, { name: "Stone Cold Steve Austin", hint: "Male" },
+      { name: "Triple H", hint: "Male" }, { name: "Randy Orton", hint: "Male" }, { name: "Brock Lesnar", hint: "Male" }, { name: "Cody Rhodes", hint: "Male" }, { name: "Seth Rollins", hint: "Male" },
+      { name: "CM Punk", hint: "Male" }, { name: "Rey Mysterio", hint: "Male" }, { name: "Hulk Hogan", hint: "Male" }, { name: "Shawn Michaels", hint: "Male" }, { name: "Edge", hint: "Male" },
+      { name: "Batista", hint: "Male" }, { name: "Kane", hint: "Male" }, { name: "Big Show", hint: "Male" }, { name: "Chris Jericho", hint: "Male" }, { name: "Kurt Angle", hint: "Male" },
+      { name: "Ric Flair", hint: "Male" }, { name: "Bret Hart", hint: "Male" }, { name: "Macho Man Randy Savage", hint: "Male" }, { name: "Andre the Giant", hint: "Male" },
+      { name: "Ultimate Warrior", hint: "Male" }, { name: "Goldberg", hint: "Male" }, { name: "Sting", hint: "Male" }, { name: "AJ Styles", hint: "Male" }, { name: "Daniel Bryan", hint: "Male" },
+      { name: "Drew McIntyre", hint: "Male" }, { name: "Becky Lynch", hint: "Female" }, { name: "Charlotte Flair", hint: "Female" }, { name: "Ronda Rousey", hint: "Female" }, { name: "Bianca Belair", hint: "Female" },
+      { name: "Rhea Ripley", hint: "Female" }, { name: "Sasha Banks", hint: "Female" }, { name: "Bayley", hint: "Female" }, { name: "Asuka", hint: "Female" }, { name: "Trish Stratus", hint: "Female" }, { name: "Lita", hint: "Female" },
+      { name: "The Miz", hint: "Male" }, { name: "Sheamus", hint: "Male" }, { name: "Jeff Hardy", hint: "Male" }, { name: "Matt Hardy", hint: "Male" }, { name: "Rob Van Dam", hint: "Male" },
+      { name: "Booker T", hint: "Male" }, { name: "Eddie Guerrero", hint: "Male" }, { name: "JBL", hint: "Male" }, { name: "Mick Foley", hint: "Male" }, { name: "Diesel (Kevin Nash)", hint: "Male" },
+      { name: "Logan Paul", hint: "Male" }, { name: "LA Knight", hint: "Male" }, { name: "Finn Balor", hint: "Male" }, { name: "Gunther", hint: "Male" }, { name: "Jey Uso", hint: "Male" }, { name: "Jimmy Uso", hint: "Male" }, { name: "Solo Sikoa", hint: "Male" },
+      { name: "Bray Wyatt", hint: "Male" }, { name: "Braun Strowman", hint: "Male" }, { name: "Bobby Lashley", hint: "Male" }, { name: "Mark Henry", hint: "Male" }
     ]
   }
 };
@@ -183,6 +183,7 @@ function startGame() {
   }));
 
   state.currentPlayerIndex = 0;
+  state.currentCategory = categoryKey;
 
   // Switch Screen
   switchScreen('game-screen');
@@ -226,7 +227,12 @@ function revealRole() {
     roleContent.innerHTML = imposterHtml;
     roleContent.className = "role-text visible imposter-text";
   } else {
-    roleContent.innerHTML = `وشەکە:<br><br>${player.word}`;
+    let playerHtml = `وشەکە:<br><br>${player.word}`;
+    // For WWE only, show hint to regular players too
+    if (state.currentCategory === 'wwe' && state.secretHint) {
+      playerHtml += `<br><br><span style='font-size:0.9rem; color:#ccc;'>لێزانی (Hint):<br>${state.secretHint}</span>`;
+    }
+    roleContent.innerHTML = playerHtml;
     roleContent.className = "role-text visible player-text";
   }
 

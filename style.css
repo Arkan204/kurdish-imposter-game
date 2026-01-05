@@ -210,3 +210,10 @@ input:focus {
   border: 2px solid var(--primary-neon);
   box-shadow: 0 0 15px var(--primary-neon);
 }
+
+.creator {
+  margin-top: 25px;
+  font-size: 0.9rem;
+  color: #666;
+  opacity: 0.7;
+}
