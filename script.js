@@ -37,6 +37,21 @@ const categories = {
       { name: "فڕانک کێسی", hint: "کۆتدیڤوار" }, { name: "ئیسماعیل بن ناسر", hint: "جەزائیر" }, { name: "ڕیاز مەحرەز", hint: "جەزائیر" }, { name: "ئیسلام سلێمانی", hint: "جەزائیر" }, { name: "میڕالێم پیانیچ", hint: "بۆسنیا" }
     ]
   },
+  "clash_royale": {
+    name: "کڵاش ڕۆیاڵ",
+    items: [
+      "Mega Knight", "P.E.K.K.A", "Electro Giant", "Hog Rider", "Sparky", "The Log", "Fireball", "Graveyard", "Princess", "Miner",
+      "Ice Wizard", "Magic Archer", "Lumberjack", "Inferno Dragon", "Bandit", "Ram Rider", "Electro Wizard", "Night Witch",
+      "Mother Witch", "Royal Ghost", "Fisherman", "Phoenix", "Golden Knight", "Skeleton King", "Archer Queen", "Mighty Miner",
+      "Monk", "Little Prince", "Valkyrie", "Musketeer", "Mini P.E.K.K.A", "Giant", "Wizard", "Ice Golem", "Dart Goblin",
+      "Inferno Tower", "Rocket", "Balloon", "Giant Skeleton", "Prince", "Dark Prince", "Executioner", "Bowler", "Hunter",
+      "X-Bow", "Tornado", "Goblin Barrel", "Guards", "Skeleton Army", "Electro Dragon", "Cannon Cart", "Wall Breakers",
+      "Royal Giant", "Elite Barbarians", "Barbarians", "Minion Horde", "Rascals", "Firecracker", "Royal Hogs", "Goblin Cage",
+      "Battle Ram", "Magic Archer", "Lava Hound", "Golem", "Witch", "Baby Dragon", "Heal Spirit", "Electro Spirit",
+      "Fire Spirit", "Ice Spirit", "Zap", "Arrows", "Poison", "Freeze", "Lightning", "Mirror", "Clone", "Rage",
+      "Log", "Earthquake", "Tombstone", "Goblin Hut", "Barbarian Hut", "Furnace", "Goblin Drill", "Tesla", "Bomb Tower"
+    ]
+  },
   "cars": {
     name: "سەیارە",
     items: [
