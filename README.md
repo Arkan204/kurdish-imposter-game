@@ -8,12 +8,13 @@ A modern, responsive web version of the popular "Imposter" party game, fully loc
 -   **Localization**: Full Kurdish Sorani support (RTL layout, Arabic script).
 -   **Categories**:
     -   ⚽ **Football**: 160+ players from Top 5 Leagues.
+    -   🛡️ **Clash Royale**: ~100 famous cards (Troops, Spells, Buildings).
     -   🚘 **Cars**: ~100 famous car brands/models.
     -   🥊 **Wrestling (WWE)**: 60+ famous wrestlers.
     -   🦁 **Animals**: ~100 animals.
     -   🏙️ **Cities**: ~100 Kurdish cities/towns.
     -   🍕 **Food**: ~100 types of food.
--   **Imposter Hints**: Specific hints (e.g., Nationality for footballers) to help the Imposter bluff.
+-   **Hint Mode**: Choose between **بێ یارمەتیدان** (Without Hint) and **یارمەتی ئیمپۆستەر** (With Hint) for specific categories like Football Player.
 -   **Validation**: Ensures at least 3 players before starting.
 -   **Design**: Sleek dark mode with neon accents.
 -   **Pass & Play**: Optimized for a single mobile device.
