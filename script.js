@@ -133,6 +133,32 @@ window.onload = function () {
     option.textContent = value.name;
     select.appendChild(option);
   }
+  const footballHintGroup = document.getElementById('football-hint-group');
+
+  window.setHintMode = function (val) {
+    document.getElementById('football-hint-val').value = val;
+    document.getElementById('btn-with-hint').classList.toggle('active', val);
+    document.getElementById('btn-no-hint').classList.toggle('active', !val);
+  };
+
+  function checkHintsAvailable() {
+    const categoryKey = select.value;
+
+    // Specifically show ONLY for football as per scenario
+    if (categoryKey === 'football') {
+      footballHintGroup.style.display = 'block';
+    } else {
+      footballHintGroup.style.display = 'none';
+    }
+  }
+
+  select.addEventListener('change', checkHintsAvailable);
+
+  // Initial check
+  if (Object.keys(categories).length > 0) {
+    select.value = Object.keys(categories)[0]; // Ensure header is consistent
+    checkHintsAvailable();
+  }
 };
 
 // --- Core Functions ---
@@ -141,6 +167,18 @@ function startGame() {
   const playerCount = parseInt(document.getElementById('player-count').value);
   const imposterCount = parseInt(document.getElementById('imposter-count').value);
   const categoryKey = document.getElementById('category-select').value;
+
+  // Get football-specific hint choice
+  let showHints = false;
+  if (categoryKey === 'football') {
+    showHints = document.getElementById('football-hint-val').value === 'true';
+  } else {
+    // Other categories that might have hints (like WWE) - optional behavior
+    // For now, based on scenario, we default to showing them OR keeping it simpler
+    const categoryData = categories[categoryKey];
+    showHints = categoryData.items.length > 0 && typeof categoryData.items[0] === 'object';
+  }
+
 
   if (playerCount < 3) {
     alert("ژمارەی یاریزان نابێت لە ٣ کەس کەمتر بێت!");
@@ -159,7 +197,7 @@ function startGame() {
   // Handle Object vs String items
   if (typeof randomItem === 'object') {
     state.secretWord = randomItem.name;
-    state.secretHint = randomItem.hint;
+    state.secretHint = showHints ? randomItem.hint : "";
   } else {
     state.secretWord = randomItem;
     state.secretHint = ""; // No hint for normal categories
@@ -253,7 +291,7 @@ function hideRole() {
 
 function endGame() {
   switchScreen('result-screen');
-  startTimer(true); // Optional auto start, or let them click
+  startTimer(true);
 }
 
 function resetGame() {
