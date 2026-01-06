@@ -7,7 +7,7 @@ A modern, responsive web version of the popular "Imposter" party game, fully loc
 ## Features
 -   **Localization**: Full Kurdish Sorani support (RTL layout, Arabic script).
 -   **Categories**:
-    -   ⚽ **Football**: 160+ players from Top 5 Leagues.
+    -   ⚽ **Football**: 230+ players from Top 5 Leagues.
     -   🛡️ **Clash Royale**: ~100 famous cards (Troops, Spells, Buildings).
     -   🚘 **Cars**: ~100 famous car brands/models.
     -   🥊 **Wrestling (WWE)**: 60+ famous wrestlers.
