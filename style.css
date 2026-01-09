@@ -265,3 +265,21 @@ input:focus {
 .btn-dark {
   background: #333 !important;
 }
+
+.custom-textarea {
+  min-height: 120px;
+  background-color: var(--card-bg);
+  color: white;
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 1.1rem;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.custom-textarea:focus {
+  border-color: var(--secondary-neon);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}

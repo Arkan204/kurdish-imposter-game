@@ -169,6 +169,19 @@ window.onload = function () {
     select.appendChild(option);
   }
   const footballHintGroup = document.getElementById('football-hint-group');
+  const customCategoryGroup = document.getElementById('custom-category-group');
+  const customWordsInput = document.getElementById('custom-words');
+
+  // Load saved custom words
+  const savedWords = localStorage.getItem('custom_imposter_words');
+  if (savedWords) {
+    customWordsInput.value = savedWords;
+  }
+
+  // Save words on change
+  customWordsInput.addEventListener('input', () => {
+    localStorage.setItem('custom_imposter_words', customWordsInput.value);
+  });
 
   window.setHintMode = function (val) {
     document.getElementById('football-hint-val').value = val;
@@ -178,6 +191,13 @@ window.onload = function () {
 
   function checkHintsAvailable() {
     const categoryKey = select.value;
+
+    // Show Custom Category textarea
+    if (categoryKey === 'custom') {
+      customCategoryGroup.style.display = 'block';
+    } else {
+      customCategoryGroup.style.display = 'none';
+    }
 
     // Specifically show ONLY for football as per scenario
     if (categoryKey === 'football') {
@@ -203,15 +223,20 @@ function startGame() {
   const imposterCount = parseInt(document.getElementById('imposter-count').value);
   const categoryKey = document.getElementById('category-select').value;
 
+  if (!categoryKey) {
+    alert("تکایە جۆرێک (Category) هەڵبژێرە!");
+    return;
+  }
+
   // Get football-specific hint choice
   let showHints = false;
   if (categoryKey === 'football') {
     showHints = document.getElementById('football-hint-val').value === 'true';
-  } else {
-    // Other categories that might have hints (like WWE) - optional behavior
-    // For now, based on scenario, we default to showing them OR keeping it simpler
+  } else if (categoryKey !== 'custom' && categoryKey !== '') {
     const categoryData = categories[categoryKey];
-    showHints = categoryData.items.length > 0 && typeof categoryData.items[0] === 'object';
+    if (categoryData && categoryData.items) {
+      showHints = categoryData.items.length > 0 && typeof categoryData.items[0] === 'object';
+    }
   }
 
 
@@ -226,8 +251,20 @@ function startGame() {
   }
 
   // Setup Data
-  const categoryData = categories[categoryKey];
-  const randomItem = categoryData.items[Math.floor(Math.random() * categoryData.items.length)];
+  let randomItem;
+  if (categoryKey === 'custom') {
+    const rawWords = document.getElementById('custom-words').value;
+    const wordsArray = rawWords.split(/[،,]+/).map(w => w.trim()).filter(w => w.length > 0);
+
+    if (wordsArray.length < 2) {
+      alert("تکایە بەلایەنی کەم ٢ وشە بنووسە بۆ دەستپێکردنی جۆری تایبەت!");
+      return;
+    }
+    randomItem = wordsArray[Math.floor(Math.random() * wordsArray.length)];
+  } else {
+    const categoryData = categories[categoryKey];
+    randomItem = categoryData.items[Math.floor(Math.random() * categoryData.items.length)];
+  }
 
   // Handle Object vs String items
   if (typeof randomItem === 'object') {

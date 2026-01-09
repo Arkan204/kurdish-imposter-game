@@ -15,6 +15,8 @@ A modern, responsive web version of the popular "Imposter" party game, fully loc
     -   🏙️ **Cities**: ~100 Kurdish cities/towns.
     -   🍕 **Food**: ~100 types of food.
 -   **Hint Mode**: Choose between **بێ یارمەتیدان** (Without Hint) and **یارمەتی ئیمپۆستەر** (With Hint) for specific categories like Football Player.
+-   **Custom Categories**: Players can enter their own comma-separated words for a personalized game experience.
+-   **LocalStorage**: Custom words and game settings are automatically saved for your next session.
 -   **Validation**: Ensures at least 3 players before starting.
 -   **Design**: Sleek dark mode with neon accents.
 -   **Pass & Play**: Optimized for a single mobile device.

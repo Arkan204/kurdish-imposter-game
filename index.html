@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <main></main>
+  <main>
     <!-- Setup Screen -->
     <div id="setup-screen" class="screen active">
       <h1>ئیمپۆستەر - کورد</h1>
@@ -28,14 +28,23 @@
         <label for="category-select">جۆر (Category)</label>
         <select id="category-select">
           <option value="" disabled selected>هەڵبژێرە...</option>
+          <option value="custom">جۆری تایبەت (Custom)</option>
         </select>
+      </div>
+
+      <div id="custom-category-group" class="hint-group">
+        <label for="custom-words" class="hint-label">وشەکان لێرە بنووسە (بە فاریزە "،" جیایان بکەوە)</label>
+        <textarea id="custom-words" class="full-width custom-textarea"
+          placeholder="بۆ نموونە: شێر، بەور، پشیلە"></textarea>
       </div>
 
       <div id="football-hint-group" class="hint-group">
         <p class="hint-label">شێوازی یاری (Hint Mode)</p>
         <div class="flex-gap-10">
-          <button type="button" id="btn-no-hint" class="btn hint-btn active btn-small" onclick="setHintMode(false)">بێ یارمەتیدان</button>
-          <button type="button" id="btn-with-hint" class="btn hint-btn btn-small" onclick="setHintMode(true)">یارمەتی ئیمپۆستەر</button>
+          <button type="button" id="btn-no-hint" class="btn hint-btn active btn-small" onclick="setHintMode(false)">بێ
+            یارمەتیدان</button>
+          <button type="button" id="btn-with-hint" class="btn hint-btn btn-small" onclick="setHintMode(true)">یارمەتی
+            ئیمپۆستەر</button>
         </div>
         <input type="hidden" id="football-hint-val" value="false">
       </div>
