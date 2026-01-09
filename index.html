@@ -9,82 +9,80 @@
 </head>
 
 <body>
-  <main>
-    <!-- Setup Screen -->
-    <div id="setup-screen" class="screen active">
-      <h1>ئیمپۆستەر - کورد</h1>
+  <!-- Setup Screen -->
+  <div id="setup-screen" class="screen active">
+    <h1>ئیمپۆستەر - کورد</h1>
 
-      <div class="input-group">
-        <label for="player-count">ژمارەی یاریزان (3-12)</label>
-        <input type="number" id="player-count" min="3" max="12" value="4">
-      </div>
-
-      <div class="input-group">
-        <label for="imposter-count">ژمارەی ئیمپۆستەر</label>
-        <input type="number" id="imposter-count" min="1" max="3" value="1">
-      </div>
-
-      <div class="input-group">
-        <label for="category-select">جۆر (Category)</label>
-        <select id="category-select">
-          <option value="" disabled selected>هەڵبژێرە...</option>
-          <option value="custom">جۆری تایبەت (Custom)</option>
-        </select>
-      </div>
-
-      <div id="custom-category-group" class="hint-group">
-        <label for="custom-words" class="hint-label">وشەکان لێرە بنووسە (بە فاریزە "،" جیایان بکەوە)</label>
-        <textarea id="custom-words" class="full-width custom-textarea"
-          placeholder="بۆ نموونە: شێر، بەور، پشیلە"></textarea>
-      </div>
-
-      <div id="football-hint-group" class="hint-group">
-        <p class="hint-label">شێوازی یاری (Hint Mode)</p>
-        <div class="flex-gap-10">
-          <button type="button" id="btn-no-hint" class="btn hint-btn active btn-small" onclick="setHintMode(false)">بێ
-            یارمەتیدان</button>
-          <button type="button" id="btn-with-hint" class="btn hint-btn btn-small" onclick="setHintMode(true)">یارمەتی
-            ئیمپۆستەر</button>
-        </div>
-        <input type="hidden" id="football-hint-val" value="false">
-      </div>
-
-      <button type="button" class="btn" onclick="startGame()">دەستپێکردن</button>
-      <p class="creator">Created by Arkan Khalid</p>
+    <div class="input-group">
+      <label for="player-count">ژمارەی یاریزان (3-12)</label>
+      <input type="number" id="player-count" min="3" max="12" value="4">
     </div>
 
-    <!-- Game Loop Screen -->
-    <div id="game-screen" class="screen">
-      <h2 id="player-indicator">یاریزان 1</h2>
-
-      <div class="card" id="role-card" onclick="revealRole()" role="button" tabindex="0"
-        aria-label="بۆ بینینی ڕۆڵەکەت کلیک بکە">
-        <div id="card-front">
-          <p class="card-front-icon">?</p>
-          <p class="tap-hint">کلیک بکە بۆ بینینی ڕۆڵەکەت</p>
-        </div>
-        <div id="card-back" class="hidden">
-          <p id="role-content" class="role-text">ڕۆڵەکەت لێرە دەردەکەوێت</p>
-        </div>
-      </div>
-
-      <button type="button" id="action-btn" class="btn btn-reveal" onclick="revealRole()">ڕۆڵەکەت ببینە</button>
-      <button type="button" id="hide-btn" class="btn btn-hide hidden" onclick="hideRole()">ڕۆڵەکەت بشارەوە</button>
+    <div class="input-group">
+      <label for="imposter-count">ژمارەی ئیمپۆستەر</label>
+      <input type="number" id="imposter-count" min="1" max="3" value="1">
     </div>
 
-    <!-- Result / Discussion Screen -->
-    <div id="result-screen" class="screen">
-      <h1>دەستی پێکرد!</h1>
-      <p class="result-subtitle">درۆزنەکە بدۆزنەوە!</p>
+    <div class="input-group">
+      <label for="category-select">جۆر (Category)</label>
+      <select id="category-select">
+        <option value="" disabled selected>هەڵبژێرە...</option>
+        <option value="custom">جۆری تایبەت (Custom)</option>
+      </select>
+    </div>
 
-      <div class="timer-display" id="timer">00:00</div>
+    <div id="custom-category-group" class="hint-group">
+      <label for="custom-words" class="hint-label">وشەکان لێرە بنووسە (بە فاریزە "،" جیایان بکەوە)</label>
+      <textarea id="custom-words" class="full-width custom-textarea"
+        placeholder="بۆ نموونە: شێر، بەور، پشیلە"></textarea>
+    </div>
 
-      <div class="flex-gap-10 full-width">
-        <button type="button" class="btn btn-dark" onclick="toggleTimer()">کات</button>
-        <button type="button" class="btn" onclick="resetGame()">یارییەکی تر</button>
+    <div id="football-hint-group" class="hint-group">
+      <p class="hint-label">شێوازی یاری (Hint Mode)</p>
+      <div class="flex-gap-10">
+        <button type="button" id="btn-no-hint" class="btn hint-btn active btn-small" onclick="setHintMode(false)">بێ
+          یارمەتیدان</button>
+        <button type="button" id="btn-with-hint" class="btn hint-btn btn-small" onclick="setHintMode(true)">یارمەتی
+          ئیمپۆستەر</button>
+      </div>
+      <input type="hidden" id="football-hint-val" value="false">
+    </div>
+
+    <button type="button" class="btn" onclick="startGame()">دەستپێکردن</button>
+    <p class="creator">Created by Arkan Khalid</p>
+  </div>
+
+  <!-- Game Loop Screen -->
+  <div id="game-screen" class="screen">
+    <h2 id="player-indicator">یاریزان 1</h2>
+
+    <div class="card" id="role-card" onclick="revealRole()" role="button" tabindex="0"
+      aria-label="بۆ بینینی ڕۆڵەکەت کلیک بکە">
+      <div id="card-front">
+        <p class="card-front-icon">?</p>
+        <p class="tap-hint">کلیک بکە بۆ بینینی ڕۆڵەکەت</p>
+      </div>
+      <div id="card-back" class="hidden">
+        <p id="role-content" class="role-text">ڕۆڵەکەت لێرە دەردەکەوێت</p>
       </div>
     </div>
-  </main>
+
+    <button type="button" id="action-btn" class="btn btn-reveal" onclick="revealRole()">ڕۆڵەکەت ببینە</button>
+    <button type="button" id="hide-btn" class="btn btn-hide hidden" onclick="hideRole()">ڕۆڵەکەت بشارەوە</button>
+  </div>
+
+  <!-- Result / Discussion Screen -->
+  <div id="result-screen" class="screen">
+    <h1>دەستی پێکرد!</h1>
+    <p class="result-subtitle">درۆزنەکە بدۆزنەوە!</p>
+
+    <div class="timer-display" id="timer">00:00</div>
+
+    <div class="flex-gap-10 full-width">
+      <button type="button" class="btn btn-dark" onclick="toggleTimer()">کات</button>
+      <button type="button" class="btn" onclick="resetGame()">یارییەکی تر</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
