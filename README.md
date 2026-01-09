@@ -29,9 +29,18 @@ A modern, responsive web version of the popular "Imposter" party game, fully loc
 -   `style.css`: All visual styling.
 -   `script.js`: Game logic and data.
 
-## How to Play
+## How to Play / چۆنیەتی یاری کردن
+
+### English
 1.  Select number of players (3-12).
 2.  Select number of imposters (1-3).
 3.  Choose a category.
 4.  Pass the phone around! Each player taps "Show Role" to see if they are a regular player (with a secret word) or the Imposter.
 5.  Start the timer and discuss to find the Imposter!
+
+### کوردی (Sorani)
+١. ژمارەی یاریزانەکان دیاری بکە (٣-١٢).
+٢. ژمارەی ئیمپۆستەرەکان دیاری بکە (١-٣).
+٣. جۆرێک (کاتیگۆری) هەڵبژێرە.
+٤. مۆبایلەکە دەست بە دەست بکە! هەر یاریزانێک پەنجە دەنێت بە "Show Role" بۆ ئەوەی بزانێت یاریزانی ئاساییە (وشەیەکی نهێنی لایە) یان ئیمپۆستەرە.
+٥. کاتژمێرەکە دەستپێبکە و دەست بکەن بە گفتوگۆ بۆ دۆزینەوەی ئیمپۆستەرەکە!
