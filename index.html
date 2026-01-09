@@ -9,77 +9,73 @@
 </head>
 
 <body>
+  <main></main>
+    <!-- Setup Screen -->
+    <div id="setup-screen" class="screen active">
+      <h1>ئیمپۆستەر - کورد</h1>
 
-  <!-- Setup Screen -->
-  <div id="setup-screen" class="screen active">
-    <h1>ئیمپۆستەر - کورد</h1>
-
-    <div class="input-group">
-      <label for="player-count">ژمارەی یاریزان (3-12)</label>
-      <input type="number" id="player-count" min="3" max="12" value="4">
-    </div>
-
-    <div class="input-group">
-      <label for="imposter-count">ژمارەی ئیمپۆستەر</label>
-      <input type="number" id="imposter-count" min="1" max="3" value="1">
-    </div>
-
-
-    <div class="input-group">
-      <label for="category-select">جۆر (Category)</label>
-      <select id="category-select">
-        <!-- Options populated by JS -->
-      </select>
-    </div>
-
-    <div id="football-hint-group" style="display: none; margin-bottom: 20px;">
-      <label style="display: block; margin-bottom: 10px; color: #aaa;">شێوازی یاری (Hint Mode)</label>
-      <div style="display: flex; gap: 10px;">
-        <button type="button" id="btn-no-hint" class="btn hint-btn active"
-          style="margin:0; font-size: 0.9rem; padding: 12px; background: #333;" onclick="setHintMode(false)">بێ
-          یارمەتیدان</button>
-        <button type="button" id="btn-with-hint" class="btn hint-btn"
-          style="margin:0; font-size: 0.9rem; padding: 12px; background: #333;" onclick="setHintMode(true)">یارمەتی
-          ئیمپۆستەر</button>
+      <div class="input-group">
+        <label for="player-count">ژمارەی یاریزان (3-12)</label>
+        <input type="number" id="player-count" min="3" max="12" value="4">
       </div>
-      <input type="hidden" id="football-hint-val" value="false">
-    </div>
 
-    <button class="btn" onclick="startGame()">دەستپێکردن</button>
-    <p class="creator">Created by Arkan Khalid</p>
-  </div>
-
-  <!-- Game Loop Screen -->
-  <div id="game-screen" class="screen">
-    <h2 id="player-indicator">یاریزان 1</h2>
-
-    <div class="card" id="role-card" onclick="revealRole()">
-      <div id="card-front">
-        <p style="font-size: 4rem; opacity: 0.5;">?</p>
-        <p class="tap-hint">کلیک بکە بۆ بینینی ڕۆڵەکەت</p>
+      <div class="input-group">
+        <label for="imposter-count">ژمارەی ئیمپۆستەر</label>
+        <input type="number" id="imposter-count" min="1" max="3" value="1">
       </div>
-      <div id="card-back" style="display: none;">
-        <p id="role-content" class="role-text"></p>
+
+      <div class="input-group">
+        <label for="category-select">جۆر (Category)</label>
+        <select id="category-select">
+          <option value="" disabled selected>هەڵبژێرە...</option>
+        </select>
+      </div>
+
+      <div id="football-hint-group" class="hint-group">
+        <p class="hint-label">شێوازی یاری (Hint Mode)</p>
+        <div class="flex-gap-10">
+          <button type="button" id="btn-no-hint" class="btn hint-btn active btn-small" onclick="setHintMode(false)">بێ یارمەتیدان</button>
+          <button type="button" id="btn-with-hint" class="btn hint-btn btn-small" onclick="setHintMode(true)">یارمەتی ئیمپۆستەر</button>
+        </div>
+        <input type="hidden" id="football-hint-val" value="false">
+      </div>
+
+      <button type="button" class="btn" onclick="startGame()">دەستپێکردن</button>
+      <p class="creator">Created by Arkan Khalid</p>
+    </div>
+
+    <!-- Game Loop Screen -->
+    <div id="game-screen" class="screen">
+      <h2 id="player-indicator">یاریزان 1</h2>
+
+      <div class="card" id="role-card" onclick="revealRole()" role="button" tabindex="0"
+        aria-label="بۆ بینینی ڕۆڵەکەت کلیک بکە">
+        <div id="card-front">
+          <p class="card-front-icon">?</p>
+          <p class="tap-hint">کلیک بکە بۆ بینینی ڕۆڵەکەت</p>
+        </div>
+        <div id="card-back" class="hidden">
+          <p id="role-content" class="role-text">ڕۆڵەکەت لێرە دەردەکەوێت</p>
+        </div>
+      </div>
+
+      <button type="button" id="action-btn" class="btn btn-reveal" onclick="revealRole()">ڕۆڵەکەت ببینە</button>
+      <button type="button" id="hide-btn" class="btn btn-hide hidden" onclick="hideRole()">ڕۆڵەکەت بشارەوە</button>
+    </div>
+
+    <!-- Result / Discussion Screen -->
+    <div id="result-screen" class="screen">
+      <h1>دەستی پێکرد!</h1>
+      <p class="result-subtitle">درۆزنەکە بدۆزنەوە!</p>
+
+      <div class="timer-display" id="timer">00:00</div>
+
+      <div class="flex-gap-10 full-width">
+        <button type="button" class="btn btn-dark" onclick="toggleTimer()">کات</button>
+        <button type="button" class="btn" onclick="resetGame()">یارییەکی تر</button>
       </div>
     </div>
-
-    <button id="action-btn" class="btn btn-reveal" onclick="revealRole()">ڕۆڵەکەت ببینە</button>
-    <button id="hide-btn" class="btn btn-hide hidden" onclick="hideRole()">ڕۆڵەکەت بشارەوە</button>
-  </div>
-
-  <!-- Result / Discussion Screen -->
-  <div id="result-screen" class="screen">
-    <h1>دەستی پێکرد!</h1>
-    <p style="font-size: 1.2rem; margin-bottom: 20px;">درۆزنەکە بدۆزنەوە!</p>
-
-
-    <div class="timer-display" id="timer">00:00</div>
-
-    <div style="display: flex; gap: 10px; width: 100%;">
-      <button class="btn" style="background: #333;" onclick="toggleTimer()">کات</button>
-      <button class="btn" onclick="resetGame()">یارییەکی تر</button>
-    </div>
-  </div>
+  </main>
 
   <script src="script.js"></script>
 </body>

@@ -269,6 +269,7 @@ function updateGameScreen() {
 
   // Reset card state
   document.getElementById('card-front').style.display = 'flex';
+  document.getElementById('card-back').classList.add('hidden');
   document.getElementById('card-back').style.display = 'none';
   document.getElementById('role-content').classList.remove('visible', 'imposter-text', 'player-text');
 
@@ -288,6 +289,7 @@ function revealRole() {
   const roleContent = document.getElementById('role-content');
 
   cardFront.style.display = 'none';
+  cardBack.classList.remove('hidden');
   cardBack.style.display = 'flex';
 
   // Populate Content
