@@ -364,6 +364,9 @@ function hideRole() {
 }
 
 function endGame() {
+  const randomPlayer = Math.floor(Math.random() * state.players.length) + 1;
+  document.getElementById('first-player-msg').innerHTML = `یاریزانی <span>${randomPlayer}</span> دەستپێدەکات!`;
+
   switchScreen('result-screen');
   startTimer(true);
 }

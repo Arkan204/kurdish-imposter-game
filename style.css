@@ -266,6 +266,32 @@ input:focus {
   background: #333 !important;
 }
 
+.first-player-msg {
+  color: var(--secondary-neon);
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 15px 0;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+
 .custom-textarea {
   min-height: 120px;
   background-color: var(--card-bg);
