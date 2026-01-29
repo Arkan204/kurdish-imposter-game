@@ -162,12 +162,30 @@ let state = {
 // --- Initialization ---
 window.onload = function () {
   const select = document.getElementById('category-select');
+  const mixContainer = document.getElementById('mix-checkboxes');
+
   for (const [key, value] of Object.entries(categories)) {
+    // Populate Select
     const option = document.createElement('option');
     option.value = key;
     option.textContent = value.name;
     select.appendChild(option);
+
+    // Populate Mix Checkboxes
+    const div = document.createElement('div');
+    div.className = 'checkbox-item';
+    div.innerHTML = `
+      <input type="checkbox" id="mix-${key}" value="${key}">
+      <label for="mix-${key}">${value.name}</label>
+    `;
+    mixContainer.appendChild(div);
   }
+
+  // Add "Mix" Option
+  const mixOption = document.createElement('option');
+  mixOption.value = 'mix';
+  mixOption.textContent = 'تێکەڵ (Mix)';
+  select.appendChild(mixOption);
   const footballHintGroup = document.getElementById('football-hint-group');
   const customCategoryGroup = document.getElementById('custom-category-group');
   const customWordsInput = document.getElementById('custom-words');
@@ -192,11 +210,18 @@ window.onload = function () {
   function checkHintsAvailable() {
     const categoryKey = select.value;
 
-    // Show Custom Category textarea
+    // Show Custom/Mix UI
+    const mixGroup = document.getElementById('mix-category-group');
+
     if (categoryKey === 'custom') {
       customCategoryGroup.style.display = 'block';
+      mixGroup.style.display = 'none';
+    } else if (categoryKey === 'mix') {
+      customCategoryGroup.style.display = 'none';
+      mixGroup.style.display = 'block';
     } else {
       customCategoryGroup.style.display = 'none';
+      mixGroup.style.display = 'none';
     }
 
     // Specifically show ONLY for football as per scenario
@@ -261,6 +286,27 @@ function startGame() {
       return;
     }
     randomItem = wordsArray[Math.floor(Math.random() * wordsArray.length)];
+  } else if (categoryKey === 'mix') {
+    const checkboxes = document.querySelectorAll('#mix-checkboxes input:checked');
+    if (checkboxes.length < 2) {
+      alert("تکایە بەلایەنی کەم ٢ بەش هەڵبژێرە بۆ تێکەڵکردن!");
+      return;
+    }
+
+    let combinedItems = [];
+    checkboxes.forEach(chk => {
+      const catKey = chk.value;
+      if (categories[catKey]) {
+        combinedItems = combinedItems.concat(categories[catKey].items);
+      }
+    });
+
+    if (combinedItems.length === 0) {
+      alert("هیچ وشەیەک نەدۆزرایەوە!");
+      return;
+    }
+
+    randomItem = combinedItems[Math.floor(Math.random() * combinedItems.length)];
   } else {
     const categoryData = categories[categoryKey];
     randomItem = categoryData.items[Math.floor(Math.random() * categoryData.items.length)];
