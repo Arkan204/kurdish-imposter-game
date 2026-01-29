@@ -1,8 +1,11 @@
-# Imposter - Kurdish Edition (ئیمپۆستەر - کورد)
+# Imposter - Kurdish Edition - ئیمپۆستەر 🎮
 
-A modern, responsive web version of the popular "Imposter" party game, fully localized in **Kurdish Sorani**.
+**[🚀 Play Now / ئێستا یاری بکە](https://kurdish-imposter-game.vercel.app/)**
 
-**Live Demo:** [https://kurdish-imposter-game.netlify.app/](https://kurdish-imposter-game.netlify.app/)
+**Imposter - Kurdish Edition** is a modern, responsive web version of the popular "Imposter" party game, fully localized in **Kurdish Sorani**.
+
+**ئیمپۆستەر** یارییەکی خۆشی بەکۆمەڵە کە بە زمانی کوردی دیزاین کراوە و گونجاوە بۆ هەموو مۆبایل و کۆمپیوتەرێک.
+
 
 ## Features
 -   **Localization**: Full Kurdish Sorani support (RTL layout, Arabic script).
